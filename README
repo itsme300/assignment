@@ -5,4 +5,4 @@ This is a small python(flask) application to modify iptables through POST reques
 
 Usage:
 1.Run the server by doing: "python iptables.py"
-2.Issue commands to the server using 'curl'.  For example: curl -X POST http://127.0.0.1:5000/a/chain:myrule/delete?rule_num=1
+2.Issue commands to the server using 'curl'.  For example: curl -X POST http://127.0.0.1:5000/a/chain:INPUT/delete?rule_num=1
