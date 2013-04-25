@@ -10,8 +10,8 @@ app=Flask(__name__)
 
 
 phoneno=''
-auth_id = 'MAMWQYZJYWMGY0NZQ3MJ'
-auth_token = 'NzhkMzYzNDhlOTcxMTQ2MDNkYjI0ZTdhNWQ4YWJi'
+auth_id = 'xxx'
+auth_token = 'xxx'
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -26,7 +26,7 @@ def call():
     ph=request.form['phonenumber']
     p=plivo.RestAPI(auth_id, auth_token)
     params={
-        'from': '919941975713',
+        'from': 'xxxxxxxxxx',
         'to': 'ph',
         'answer_url':"https://www.dropbox.com/s/9nhoxcku1b8ij3o/transfer2.xml"
         }
@@ -41,7 +41,7 @@ def transfer():
     p1=plivo.RestAPI(auth_id, auth_token)
     params={
         'from':'ph',
-        'to':'919043836911',
+        'to':'xxxxxxxxxx',
         'answer_url':"https://www.dropbox.com/s/q012vu3pl0c8n71/transfer1.xml"
         }
     response=p1.make_call(params)
