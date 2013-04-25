@@ -1,0 +1,7 @@
+<Response>
+    <Speak language="en-GB" loop="2">Please wait while your call is being transferred</Speak>
+        <Dial>
+            <Number>919043836911</Number>
+        </Dial>   
+    <Redirect>http://localhost:5000/transfer/</Redirect>
+</Response>
