@@ -1,0 +1,4 @@
+<Response>
+  <Hangup schedule="60"/>
+  <Speak loop="0">This call will be hung up after a minute</Speak>
+</Response>
