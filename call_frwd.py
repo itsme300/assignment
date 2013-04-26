@@ -8,6 +8,7 @@ import plivo
 
 app=Flask(__name__)
 
+ph=''
 
 phoneno=''
 auth_id = 'xxx'
@@ -26,30 +27,32 @@ def call():
     ph=request.form['phonenumber']
     p=plivo.RestAPI(auth_id, auth_token)
     params={
-        'from': 'xxxxxxxxxx',
-        'to': 'ph',
-        'answer_url':"https://www.dropbox.com/s/9nhoxcku1b8ij3o/transfer2.xml"
+        'from': 'xxxxxxxxxxxx',
+        'to': ph,
+        'answer_url':"https://dl-web.dropbox.com/get/Public/transfer2.xml?w=AABjZKrcXoysFZ9VNViu3EvPOnCdFeo6jVQuIP7t4slqUw"
         }
     response=p.make_call(params)
-if response['message']!='call fired':
-        return 'call not made'
+#    if response['message']!= 'call fired':
+
+#    return 'call not made'
 #    else:
-        return transfer()
+    return transfer(ph)
 
 #@app.route('/transfer/',methods=['GET','POST'])
-def transfer():
+def transfer(ph):
     p1=plivo.RestAPI(auth_id, auth_token)
     params={
-        'from':'ph',
-        'to':'xxxxxxxxxx',
-        'answer_url':"https://www.dropbox.com/s/q012vu3pl0c8n71/transfer1.xml"
+        'from':ph,
+        'to':'xxxxxxxxxxxx',
+        'answer_url':"https://dl-web.dropbox.com/get/Public/transfer1.xml?w=AAA2sNSIdNTvs1jHMzV9FDz5sZI8mJ5GMX4LVQ9HgnJ-cw"
         }
     response=p1.make_call(params)
-    if response['message']!='call fired':
-        return 'call transfer failed'
-    else:
-        return 'call in progress'
+    
+#    if response['message']!='call fired':
+#        return 'call transfer failed'
+#  else:
+
+    return 'call in progress'
 
 if __name__=='__main__':
-    app.run(debug=True)                                                                                                                               
-                                                   
+    app.run(debug=True)                    
